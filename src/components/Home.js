@@ -41,7 +41,15 @@ const Home = () => {
 
   return (
     <>
-      <div>{pokemonsList.map((pokemon) => pokemon.name + " ")}</div>
+      <div>
+        {pokemonsList.map(
+          (pokemon) =>
+            pokemon.name +
+            "-> base experience: " +
+            pokemon.base_experience +
+            " | | "
+        )}
+      </div>
     </>
   );
 };
