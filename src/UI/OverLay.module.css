@@ -20,11 +20,12 @@
 }
 
 .overlay_title {
-  font-size: 80px;
+  font-size: clamp(60px, 1vw, 20px);
   color: #fff;
   text-transform: uppercase;
   padding-bottom: 10px;
   font-family: var(--ff-pokemon);
+  white-space: nowrap;
 }
 
 .overlay_btn {

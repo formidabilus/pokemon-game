@@ -5,8 +5,9 @@ import classes from "./HomePage.module.css";
 
 const HomePage = () => {
   const [start, setStart] = useState(true);
+
   const handleStart = () => {
-    setStart((prev) => !prev);
+    setStart(false);
   };
 
   return (
