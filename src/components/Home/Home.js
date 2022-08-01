@@ -45,7 +45,6 @@ const Home = () => {
     };
     getPokemonsData();
     waitForImages();
-    console.log(pokemonImage);
   }, []);
   function waitForImages() {
     const newRandomPokemonLeft = getRandomPokemon(pokemonsList);
