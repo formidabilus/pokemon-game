@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-
-const Home = () => {
-  return <div>Home</div>;
-=======
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -41,7 +35,6 @@ const Home = () => {
     };
 
     getPokemonsData();
-    console.log(pokemonsList);
   }, []);
   console.log(pokemonsList);
 
@@ -58,7 +51,6 @@ const Home = () => {
       </div>
     </>
   );
->>>>>>> master
 };
 
 export default Home;
