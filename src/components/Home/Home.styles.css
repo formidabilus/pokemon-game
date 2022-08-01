@@ -1,0 +1,32 @@
+@font-face {
+  font-family: pokemon;
+  src: url("../../assets/fonts/PocketMonk-15ze.ttf");
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.button-catch {
+  margin-top: 20px;
+  background-color: black;
+  color: black;
+  font-size: large;
+  font-family: pokemon;
+  width: 100px;
+  height: 100px;
+  z-index: 100;
+  border: 2px solid black;
+  border-radius: 50%;
+  background: linear-gradient(0deg, red 50%, white 50%);
+  position: relative;
+  box-shadow: 0 3px #999;
+}
+
+.button-catch:active {
+  background-color: #ffab00;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
