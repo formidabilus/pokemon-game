@@ -1,9 +1,8 @@
 import React from "react";
 import classes from "./OverLay.module.css";
-// import Button from "./Button";
 import { Link } from "react-router-dom";
 
-const OverLay = ({ onStartGame }) => {
+const OverLay = () => {
   return (
     <div className={classes["overlay_container"]}>
       <div className={classes["over_lay"]}>
