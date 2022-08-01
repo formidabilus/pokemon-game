@@ -48,9 +48,7 @@ const Home = () => {
     const newRandomPokemonRight = getRandomPokemon(pokemonsList);
     const randomPokemonImageLeft = getPokemonImage(newRandomPokemonLeft);
     const randomPokemonImageRight = getPokemonImage(newRandomPokemonRight);
-    console.log(randomPokemonImageLeft);
     setPokemonImage([randomPokemonImageLeft, randomPokemonImageRight]);
-    console.log(pokemonImage);
   }, []);
 
   const leftPokemonImage = pokemonImage[0];
