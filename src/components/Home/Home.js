@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+
+import {
+  getPokemonImage,
+  getRandomPokemon,
+} from "../../utility/helperFunctions";
+
 import Card from "../Card/Card";
 
 const Home = () => {
   const [pokemonsList, setPokemonsList] = useState([]);
+  const [pokemonImage, setPokemonImage] = useState([]);
 
   useEffect(() => {
     const getPokemonsData = async () => {
@@ -36,15 +43,23 @@ const Home = () => {
     };
 
     getPokemonsData();
-    console.log(pokemonsList);
-  }, []);
-  console.log(pokemonsList);
 
+    const newRandomPokemonLeft = getRandomPokemon(pokemonsList);
+    const newRandomPokemonRight = getRandomPokemon(pokemonsList);
+    const randomPokemonImageLeft = getPokemonImage(newRandomPokemonLeft);
+    const randomPokemonImageRight = getPokemonImage(newRandomPokemonRight);
+    console.log(randomPokemonImageLeft);
+    setPokemonImage([randomPokemonImageLeft, randomPokemonImageRight]);
+    console.log(pokemonImage);
+  }, []);
+
+  const leftPokemonImage = pokemonImage[0];
+  const rightPokemonImage = pokemonImage[1];
   return (
     <div className="cards-wrapper">
-      <Card pokemonsList={pokemonsList} />
+      <Card pokemonImage={leftPokemonImage} />
       <p className="vs-text">VS</p>
-      <Card pokemonsList={pokemonsList} />
+      <Card pokemonImage={rightPokemonImage} />
     </div>
   );
 };
