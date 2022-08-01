@@ -37,7 +37,6 @@ const Home = () => {
     getPokemonsData();
   }, []);
   console.log(pokemonsList);
-
   return (
     <>
       <div>
