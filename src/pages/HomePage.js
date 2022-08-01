@@ -12,7 +12,7 @@ const HomePage = () => {
 
   return (
     <div className={classes["home_page"]}>
-      {start && <OverLay onStartGame={handleStart} />}
+      {/* {start && <OverLay onStartGame={handleStart} />} */}
       <Home />
     </div>
   );

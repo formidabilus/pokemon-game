@@ -1,6 +1,6 @@
 export const getRandomPokemon = (pokemonsList) => {
   const randomNr = Math.floor(Math.random() * 150);
-  const randomPokemon = pokemonsList && pokemonsList[randomNr];
+  const randomPokemon = pokemonsList[randomNr];
   return randomPokemon;
 };
 

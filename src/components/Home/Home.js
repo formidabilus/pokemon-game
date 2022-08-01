@@ -8,6 +8,8 @@ import {
 
 import Card from "../Card/Card";
 
+import "./Home.styles.css";
+
 const Home = () => {
   const [pokemonsList, setPokemonsList] = useState([]);
   const [pokemonImage, setPokemonImage] = useState([]);
@@ -41,23 +43,31 @@ const Home = () => {
 
       setPokemonsList(individualPokemons);
     };
-
     getPokemonsData();
-
+    waitForImages();
+    console.log(pokemonImage);
+  }, []);
+  function waitForImages() {
     const newRandomPokemonLeft = getRandomPokemon(pokemonsList);
     const newRandomPokemonRight = getRandomPokemon(pokemonsList);
     const randomPokemonImageLeft = getPokemonImage(newRandomPokemonLeft);
     const randomPokemonImageRight = getPokemonImage(newRandomPokemonRight);
+
     setPokemonImage([randomPokemonImageLeft, randomPokemonImageRight]);
-  }, []);
+  }
 
   const leftPokemonImage = pokemonImage[0];
   const rightPokemonImage = pokemonImage[1];
   return (
-    <div className="cards-wrapper">
-      <Card pokemonImage={leftPokemonImage} />
-      <p className="vs-text">VS</p>
-      <Card pokemonImage={rightPokemonImage} />
+    <div className="container">
+      <div className="cards-wrapper">
+        <Card pokemonImage={leftPokemonImage} />
+        <p className="vs-text">VS</p>
+        <Card pokemonImage={rightPokemonImage} />
+      </div>
+      <button className="button-catch" onClick={() => waitForImages()}>
+        Catch the Pokemons
+      </button>
     </div>
   );
 };
