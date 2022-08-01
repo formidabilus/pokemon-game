@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./OverLay.module.css";
-import Button from "./Button";
+// import Button from "./Button";
+import { Link } from "react-router-dom";
 
 const OverLay = ({ onStartGame }) => {
   return (
@@ -8,9 +9,9 @@ const OverLay = ({ onStartGame }) => {
       <div className={classes["over_lay"]}>
         <h1 className={classes["overlay_title"]}>Mortal Pokemon-bat</h1>
         <h2 className={classes["overlay_start-title"]}>Press to start Game!</h2>
-        <Button className={classes["overlay_btn"]} onClick={onStartGame}>
+        <Link to="/start" className={classes["overlay_start-link"]}>
           Start
-        </Button>
+        </Link>
       </div>
     </div>
   );
