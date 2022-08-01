@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Card from "../Card/Card";
 
 const Home = () => {
   const [pokemonsList, setPokemonsList] = useState([]);
@@ -40,17 +41,11 @@ const Home = () => {
   console.log(pokemonsList);
 
   return (
-    <>
-      <div>
-        {pokemonsList.map(
-          (pokemon) =>
-            pokemon.name +
-            "-> base experience: " +
-            pokemon.base_experience +
-            " | | "
-        )}
-      </div>
-    </>
+    <div className="cards-wrapper">
+      <Card pokemonsList={pokemonsList} />
+      <p className="vs-text">VS</p>
+      <Card pokemonsList={pokemonsList} />
+    </div>
   );
 };
 
