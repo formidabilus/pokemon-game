@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Card from "../Card/Card";
 import ChoiceBtns from "../ChoiceBtns/ChoiceBtns";
 import {
@@ -30,6 +31,17 @@ const Home = ({ pokemonsList }) => {
 
   const leftPokemonImage = pokemonImage[0];
   const rightPokemonImage = pokemonImage[1];
+
+  const obj = pokemonTypes.map((type) => [
+    type.name,
+    type.damage_relations.double_damage_from,
+    type.damage_relations.double_damage_to,
+    type.damage_relations.half_damage_from,
+    type.damage_relations.half_damage_to,
+    type.damage_relations.no_damage_from,
+    type.damage_relations.no_damage_to,
+  ]);
+  console.log(obj);
 
   return (
     <div className={classes["home_container"]}>

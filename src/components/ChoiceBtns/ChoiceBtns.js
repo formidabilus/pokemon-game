@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Button from "../../UI/Button";
 import classes from "./ChoiceBtns.module.css";
 
