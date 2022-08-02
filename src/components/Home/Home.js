@@ -42,15 +42,18 @@ const Home = () => {
     );
     setPokemonsList(individualPokemons);
   };
+  const newRandomPokemonLeft = getRandomPokemon(pokemonsList);
+  const newRandomPokemonRight = getRandomPokemon(pokemonsList);
+
+  function waitForImages() {
+    const randomPokemonImageLeft = getPokemonImage(newRandomPokemonLeft);
+    const randomPokemonImageRight = getPokemonImage(newRandomPokemonRight);
+    setPokemonImage([randomPokemonImageLeft, randomPokemonImageRight]);
+  }
 
   useEffect(() => {
     getPokemonsData();
-    const newRandomPokemonLeft = getRandomPokemon(pokemonsList);
-    const newRandomPokemonRight = getRandomPokemon(pokemonsList);
-    const randomPokemonImageLeft = getPokemonImage(newRandomPokemonLeft);
-    const randomPokemonImageRight = getPokemonImage(newRandomPokemonRight);
-
-    setPokemonImage([randomPokemonImageLeft, randomPokemonImageRight]);
+    waitForImages();
   }, []);
 
   const leftPokemonImage = pokemonImage[0];
@@ -60,12 +63,14 @@ const Home = () => {
     <div className={classes["home_container"]}>
       <div className={classes["home"]}>
         <div className={classes["home_card-container"]}>
-          <p>Score 0</p>
           <div className={classes["cards-wrapper"]}>
             <Card pokemonImage={leftPokemonImage} />
-            <p className={classes["vs-text"]}>VS</p>
+            <p className="vs-text">VS</p>
             <Card pokemonImage={rightPokemonImage} />
           </div>
+          <button className="button-catch" onClick={() => waitForImages()}>
+            Catch the Pokemons
+          </button>
           <div>
             <ChoiceBtns />
           </div>
