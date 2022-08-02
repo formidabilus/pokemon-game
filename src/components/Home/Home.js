@@ -10,6 +10,7 @@ import {
 import Card from "../Card/Card";
 
 import "./Home.styles.css";
+import ChoiceBtns from "../ChoiceBtns/ChoiceBtns";
 
 const Home = () => {
   const [pokemonsList, setPokemonsList] = useState([]);
@@ -39,7 +40,6 @@ const Home = () => {
         return { ...individualPokemon.data };
       })
     );
-    console.log(individualPokemons);
     setPokemonsList(individualPokemons);
   };
 
@@ -60,13 +60,16 @@ const Home = () => {
     <div className={classes["home_container"]}>
       <div className={classes["home"]}>
         <div className={classes["home_card-container"]}>
+          <p>Score 0</p>
           <div className={classes["cards-wrapper"]}>
             <Card pokemonImage={leftPokemonImage} />
             <p className={classes["vs-text"]}>VS</p>
             <Card pokemonImage={rightPokemonImage} />
           </div>
+          <div>
+            <ChoiceBtns />
+          </div>
         </div>
-        <div></div>
       </div>
     </div>
   );
