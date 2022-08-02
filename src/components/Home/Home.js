@@ -12,36 +12,9 @@ import Card from "../Card/Card";
 import "./Home.styles.css";
 import ChoiceBtns from "../ChoiceBtns/ChoiceBtns";
 
-const Home = () => {
-  const [pokemonsList, setPokemonsList] = useState([]);
+const Home = ({ pokemonsList }) => {
   const [pokemonImage, setPokemonImage] = useState([]);
-  const getPokemonsData = async () => {
-    const pokemonApiUrl = "https://pokeapi.co/api/v2/pokemon?limit=150";
-    const response = await axios.get(pokemonApiUrl).catch((error) => {
-      if (error) {
-        console.log(error.response.data);
-        console.log(error.response.status);
-        console.log(error.response.headers);
-      }
-    });
-    const pokemonsResult = response.data.results;
 
-    const individualPokemons = await Promise.all(
-      pokemonsResult.map(async (pokemon) => {
-        const individualPokemon = await axios
-          .get(pokemon.url)
-          .catch((error) => {
-            if (error) {
-              console.log(error.response.data);
-              console.log(error.response.status);
-              console.log(error.response.headers);
-            }
-          });
-        return { ...individualPokemon.data };
-      })
-    );
-    setPokemonsList(individualPokemons);
-  };
   const newRandomPokemonLeft = getRandomPokemon(pokemonsList);
   const newRandomPokemonRight = getRandomPokemon(pokemonsList);
 
@@ -52,7 +25,6 @@ const Home = () => {
   }
 
   useEffect(() => {
-    getPokemonsData();
     waitForImages();
   }, []);
 
