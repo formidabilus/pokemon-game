@@ -20,12 +20,6 @@
   align-items: center;
 }
 
-.vs-text {
-  font-size: var(--ff-pokemon);
-  font-size: 44px;
-  align-self: center;
-}
-
 .cards-wrapper {
   display: flex;
 }
