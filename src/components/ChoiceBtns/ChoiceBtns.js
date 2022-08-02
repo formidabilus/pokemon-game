@@ -1,21 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "../../UI/Button";
-import axios from "axios";
+import classes from "./ChoiceBtns.module.css";
 
 const ChoiceBtns = () => {
-  const [pokemonTypes, setPokemonTypes] = useState([]);
-
-  const getPokemonsTypes = async () => {
-    const pokemonApiTypes = "https://pokeapi.co/api/v2/type/";
-    const response = await axios.getPokemonsTypes(pokemonApiTypes);
-    const pokemonResult = response.data.results;
-    console.log(pokemonResult);
-  };
   return (
-    <div>
-      <Button>Win</Button>
-      <Button>Draw</Button>
-      <Button>Lose</Button>
+    <div className={classes["choice_button-container"]}>
+      <p className={classes["choice_text"]}>Please select choice</p>
+      <Button className={classes["choice_buttons"]}>Win</Button>
+      <Button className={classes["choice_buttons"]}>Draw</Button>
+      <Button className={classes["choice_buttons"]}>Lose</Button>
     </div>
   );
 };

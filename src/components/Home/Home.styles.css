@@ -34,6 +34,7 @@
   background: linear-gradient(0deg, red 50%, white 50%);
   position: relative;
   box-shadow: 0 3px #999;
+  cursor: pointer;
 }
 
 .button-catch:active {

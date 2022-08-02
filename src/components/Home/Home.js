@@ -15,6 +15,7 @@ import ChoiceBtns from "../ChoiceBtns/ChoiceBtns";
 const Home = () => {
   const [pokemonsList, setPokemonsList] = useState([]);
   const [pokemonImage, setPokemonImage] = useState([]);
+
   const getPokemonsData = async () => {
     const pokemonApiUrl = "https://pokeapi.co/api/v2/pokemon?limit=150";
     const response = await axios.get(pokemonApiUrl).catch((error) => {

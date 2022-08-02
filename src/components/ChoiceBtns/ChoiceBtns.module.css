@@ -1,0 +1,26 @@
+.choice_button-container {
+  padding-top: 20px;
+  width: 100%;
+}
+
+.choice_buttons {
+  font-family: var(--ff-pokemon);
+  font-size: 24px;
+  background: linear-gradient(to left, red 50%, #fff 50%);
+  padding: 0.25em 0.5em;
+  margin-right: 0.5em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.choice_buttons:active {
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+
+.choice_text {
+  font-family: var(--ff-pokemon);
+  font-size: 24px;
+  text-align: center;
+  padding-bottom: 10px;
+}
