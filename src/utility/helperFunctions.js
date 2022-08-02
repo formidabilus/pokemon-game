@@ -8,6 +8,5 @@ export const getPokemonImage = (pokemon) => {
   const image =
     pokemon &&
     `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
-
   return image;
 };
