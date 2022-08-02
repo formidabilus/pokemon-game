@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
-import classes from "./Home.module.css";
-
+import Card from "../Card/Card";
+import ChoiceBtns from "../ChoiceBtns/ChoiceBtns";
 import {
   getPokemonImage,
+  getPokemonTypes,
   getRandomPokemon,
 } from "../../utility/helperFunctions";
 
-import Card from "../Card/Card";
-
+import classes from "./Home.module.css";
 import "./Home.styles.css";
-import ChoiceBtns from "../ChoiceBtns/ChoiceBtns";
 
 const Home = ({ pokemonsList }) => {
   const [pokemonImage, setPokemonImage] = useState([]);
+  const [pokemonTypes, setPokemonTypes] = useState([]);
+
+  console.log(pokemonTypes);
 
   const newRandomPokemonLeft = getRandomPokemon(pokemonsList);
   const newRandomPokemonRight = getRandomPokemon(pokemonsList);
@@ -25,6 +27,7 @@ const Home = ({ pokemonsList }) => {
 
   useEffect(() => {
     waitForImages();
+    getPokemonTypes(setPokemonTypes);
   }, []);
 
   const leftPokemonImage = pokemonImage[0];

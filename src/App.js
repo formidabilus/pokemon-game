@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Home from "./components/Home/Home";
-import { getPokemonsData } from "./utility/helperFunctions";
+import { getPokemonsData, getPokemonTypes } from "./utility/helperFunctions";
 import "./App.css";
 
 function App() {
   const [pokemonsList, setPokemonsList] = useState([]);
+
   useEffect(() => {
     getPokemonsData(setPokemonsList);
   }, []);

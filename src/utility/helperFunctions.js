@@ -38,3 +38,18 @@ export const getPokemonsData = async (setPokemonsList) => {
   );
   setPokemonsList(individualPokemons);
 };
+
+export const getPokemonTypes = async (setPokemonTypes) => {
+  const data = await fetch("https://pokeapi.co/api/v2/type/");
+  const response = await data.json();
+  const result = response.results;
+  const types = await Promise.all(
+    result.map(async (types) => {
+      const typeData = await fetch(types.url);
+      const typeRes = await typeData.json();
+      return typeRes;
+    })
+  );
+  console.log(types);
+  setPokemonTypes(types);
+};

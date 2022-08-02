@@ -47,7 +47,10 @@
   font-size: 500%;
   font-family: pokemon;
   color: #ffab00;
-  margin: 20px;
+  margin: 40px;
   font-weight: 900;
   text-shadow: 0 5px #666;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
