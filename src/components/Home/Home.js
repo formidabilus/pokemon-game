@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import Card from "../Card/Card";
 import ChoiceBtns from "../ChoiceBtns/ChoiceBtns";
 import {
@@ -47,7 +46,7 @@ const Home = ({ pokemonsList }) => {
     <div className={classes["home_container"]}>
       <div className={classes["home"]}>
         <div className={classes["home_card-container"]}>
-          <div className={classes["cards-wrapper"]}>
+          <div className={classes["cards_wrapper"]}>
             <Card pokemonImage={leftPokemonImage} />
             <p className="vs-text">VS</p>
             <Card pokemonImage={rightPokemonImage} />

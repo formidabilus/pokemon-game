@@ -11,10 +11,12 @@
   margin-right: 0.5em;
   border-radius: 5px;
   cursor: pointer;
+  border: none;
+  box-shadow: 0 3px #666;
 }
 
 .choice_buttons:active {
-  box-shadow: 0 3px #666;
+  box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 
