@@ -14,8 +14,6 @@ const Home = ({ pokemonsList }) => {
   const [pokemonImage, setPokemonImage] = useState([]);
   const [pokemonTypes, setPokemonTypes] = useState([]);
 
-  console.log(pokemonTypes);
-
   const newRandomPokemonLeft = getRandomPokemon(pokemonsList);
   const newRandomPokemonRight = getRandomPokemon(pokemonsList);
 
@@ -46,7 +44,7 @@ const Home = ({ pokemonsList }) => {
             Catch the Pokemons
           </button>
           <div>
-            <ChoiceBtns />
+            <ChoiceBtns pokemonTypes={pokemonTypes} />
           </div>
         </div>
       </div>

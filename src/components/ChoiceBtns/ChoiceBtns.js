@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Button from "../../UI/Button";
 import classes from "./ChoiceBtns.module.css";
 
-const ChoiceBtns = () => {
+const ChoiceBtns = ({ pokemonTypes }) => {
   return (
     <div className={classes["choice_button-container"]}>
       <p className={classes["choice_text"]}>Please select choice:</p>

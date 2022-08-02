@@ -50,6 +50,5 @@ export const getPokemonTypes = async (setPokemonTypes) => {
       return typeRes;
     })
   );
-  console.log(types);
   setPokemonTypes(types);
 };
