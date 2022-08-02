@@ -9,6 +9,8 @@ import {
 
 import Card from "../Card/Card";
 
+import "./Home.styles.css";
+
 const Home = () => {
   const [pokemonsList, setPokemonsList] = useState([]);
   const [pokemonImage, setPokemonImage] = useState([]);
@@ -47,6 +49,7 @@ const Home = () => {
     const newRandomPokemonRight = getRandomPokemon(pokemonsList);
     const randomPokemonImageLeft = getPokemonImage(newRandomPokemonLeft);
     const randomPokemonImageRight = getPokemonImage(newRandomPokemonRight);
+
     setPokemonImage([randomPokemonImageLeft, randomPokemonImageRight]);
   }, []);
 
