@@ -1,5 +1,5 @@
 import React from "react";
-import OverLay from "../UI/OverLay";
+import OverLay from "../components/StartGame/Start";
 import classes from "./HomePage.module.css";
 
 const HomePage = () => {

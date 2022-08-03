@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import classes from "./OverLay.module.css";
-import StartGame from "../components/StartGame/StartGame";
-import EnterName from "../components/EnterName/EnterName";
-import NameDisplay from "../components/EnterName/NameDisplay";
+import classes from "./Start.module.css";
+import StartGame from "./StartGame";
+import EnterName from "../EnterName/EnterName";
+import NameDisplay from "../EnterName/NameDisplay";
 
-const OverLay = () => {
+const Start = () => {
   const [enterName, setEnterName] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [displayStart, setDisplayStart] = useState(false);
@@ -42,4 +42,4 @@ const OverLay = () => {
   );
 };
 
-export default OverLay;
+export default Start;

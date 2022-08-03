@@ -7,6 +7,7 @@ import "./App.css";
 
 function App() {
   const [pokemonsList, setPokemonsList] = useState([]);
+  
 
   useEffect(() => {
     getPokemonsData(setPokemonsList);
