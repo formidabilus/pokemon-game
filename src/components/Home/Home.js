@@ -8,6 +8,7 @@ import {
   getRandomPokemon,
 } from "../../utility/helperFunctions";
 import classes from "./Home.module.css";
+import Score from "../Score/Score";
 
 const Home = ({ pokemonsList }) => {
   const [pokemonImage, setPokemonImage] = useState([]);
@@ -39,11 +40,12 @@ const Home = ({ pokemonsList }) => {
     type.damage_relations.no_damage_from,
     type.damage_relations.no_damage_to,
   ]);
-  console.log(obj.name);
+  console.log(obj);
 
   return (
     <div className={classes["home_container"]}>
       <div className={classes["home"]}>
+        <Score />
         <div className={classes["home_card-container"]}>
           <div className={classes["cards_wrapper"]}>
             <Card pokemonImage={leftPokemonImage} />
