@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Card from "../Card/Card";
 import ChoiceBtns from "../ChoiceBtns/ChoiceBtns";
+import Button from "../../UI/Button";
 import {
   getPokemonImage,
   getPokemonTypes,
   getRandomPokemon,
 } from "../../utility/helperFunctions";
 import classes from "./Home.module.css";
-import "./Home.styles.css";
 
 const Home = ({ pokemonsList }) => {
   const [pokemonImage, setPokemonImage] = useState([]);
@@ -30,8 +30,6 @@ const Home = ({ pokemonsList }) => {
   const leftPokemonImage = pokemonImage[0];
   const rightPokemonImage = pokemonImage[1];
 
-  console.log(pokemonTypes);
-
   const obj = pokemonTypes.map((type) => [
     type.name,
     type.damage_relations.double_damage_from,
@@ -41,8 +39,7 @@ const Home = ({ pokemonsList }) => {
     type.damage_relations.no_damage_from,
     type.damage_relations.no_damage_to,
   ]);
-  console.log("here");
-  console.log(obj);
+  console.log(obj.name);
 
   return (
     <div className={classes["home_container"]}>
@@ -50,12 +47,15 @@ const Home = ({ pokemonsList }) => {
         <div className={classes["home_card-container"]}>
           <div className={classes["cards_wrapper"]}>
             <Card pokemonImage={leftPokemonImage} />
-            <p className="vs-text">VS</p>
+            <p className={classes["vs-text"]}>VS</p>
             <Card pokemonImage={rightPokemonImage} />
           </div>
-          <button className="button-catch" onClick={() => waitForImages()}>
+          <Button
+            className={classes["button-catch"]}
+            onClick={() => waitForImages()}
+          >
             Catch the Pokemons
-          </button>
+          </Button>
           <div>
             <ChoiceBtns pokemonTypes={pokemonTypes} />
           </div>

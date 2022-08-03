@@ -1,8 +1,3 @@
-@font-face {
-  font-family: pokemon;
-  src: url("../../assets/fonts/PocketMonk-15ze.ttf");
-}
-
 .pokemonImage {
   padding: 0px 100px 0 0;
   width: 350px;
@@ -14,13 +9,4 @@
   background-size: 500px 270px;
   background-repeat: no-repeat;
   position: relative;
-}
-
-.vs-text {
-  font-size: 500%;
-  font-family: pokemon;
-  color: #ffab00;
-  margin: 20px;
-  font-weight: 900;
-  text-shadow: 0 5px #666;
 }
