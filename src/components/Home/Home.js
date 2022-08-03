@@ -6,7 +6,6 @@ import {
   getPokemonTypes,
   getRandomPokemon,
 } from "../../utility/helperFunctions";
-
 import classes from "./Home.module.css";
 import "./Home.styles.css";
 
@@ -43,7 +42,7 @@ const Home = ({ pokemonsList }) => {
     type.damage_relations.no_damage_to,
   ]);
   console.log("here");
-  // console.log(obj);
+  console.log(obj);
 
   return (
     <div className={classes["home_container"]}>

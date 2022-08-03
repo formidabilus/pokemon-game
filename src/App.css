@@ -54,6 +54,9 @@ table {
 }
 
 :root {
+  /* Font family */
   --ff-pokemon: pokemon;
+
+  /* Text color */
   --clr-white: #fff;
 }
