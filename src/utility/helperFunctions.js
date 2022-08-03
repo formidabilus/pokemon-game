@@ -43,7 +43,6 @@ export const getPokemonTypes = async (setPokemonTypes) => {
   const data = await fetch("https://pokeapi.co/api/v2/type/");
   const response = await data.json();
   const result = response.results;
-
   const types = await Promise.all(
     result.map(async (types) => {
       const typeData = await fetch(types.url);

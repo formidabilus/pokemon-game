@@ -31,16 +31,76 @@ const Home = ({ pokemonsList }) => {
   const leftPokemonImage = pokemonImage[0];
   const rightPokemonImage = pokemonImage[1];
 
-  const obj = pokemonTypes.map((type) => [
-    type.name,
-    type.damage_relations.double_damage_from,
-    type.damage_relations.double_damage_to,
-    type.damage_relations.half_damage_from,
-    type.damage_relations.half_damage_to,
-    type.damage_relations.no_damage_from,
-    type.damage_relations.no_damage_to,
-  ]);
-  console.log(obj);
+  const typeMapping = {};
+  pokemonTypes.forEach((type) => {
+    typeMapping[type.name] = { ...type.damage_relations };
+  });
+  console.log(typeMapping);
+
+  function calculateDamageTo(pokemonTypeOne, pokemonTypeTwo) {
+    let scoreDamageTo = 0;
+    for (const type in typeMapping) {
+      if (type === pokemonTypeOne) {
+        const doubleDamageTo = typeMapping[type].double_damage_to;
+        doubleDamageTo.forEach((type) => {
+          const { name } = type;
+          if (name === pokemonTypeTwo) {
+            scoreDamageTo = scoreDamageTo + 2;
+          } else return;
+        });
+        const halfDamageTo = typeMapping[type].half_damage_to;
+        halfDamageTo.forEach((type) => {
+          const { name } = type;
+          if (name === pokemonTypeTwo) {
+            scoreDamageTo = scoreDamageTo + 0.5;
+          } else return;
+        });
+
+        const noDamageTo = typeMapping[type].no_damage_to;
+        noDamageTo.forEach((type) => {
+          const { name } = type;
+          if (name === pokemonTypeTwo) {
+            return scoreDamageTo;
+          } else return;
+        });
+      }
+    }
+    return scoreDamageTo;
+  }
+
+  function calculateDamageFrom(pokemonTypeOne, pokemonTypeTwo) {
+    let scoreDamageFrom = 0;
+    for (const type in typeMapping) {
+      if (type === pokemonTypeOne) {
+        const doubleDamageFrom = typeMapping[type].double_damage_from;
+        doubleDamageFrom.forEach((type) => {
+          const { name } = type;
+          if (name === pokemonTypeTwo) {
+            scoreDamageFrom = scoreDamageFrom - 2;
+          } else return;
+        });
+        const halfDamageFrom = typeMapping[type].half_damage_from;
+        halfDamageFrom.forEach((type) => {
+          const { name } = type;
+          if (name === pokemonTypeTwo) {
+            scoreDamageFrom = scoreDamageFrom - 0.5;
+          } else return;
+        });
+
+        const noDamageFrom = typeMapping[type].no_damage_from;
+        noDamageFrom.forEach((type) => {
+          const { name } = type;
+          if (name === pokemonTypeTwo) {
+            return scoreDamageFrom;
+          } else return;
+        });
+      }
+    }
+    return scoreDamageFrom;
+  }
+
+  console.log(calculateDamageFrom("ground", "water"));
+  console.log(calculateDamageTo("ground", "bug"));
 
   return (
     <div className={classes["home_container"]}>
