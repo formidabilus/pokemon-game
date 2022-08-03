@@ -7,7 +7,7 @@ const OverLay = () => {
     <div className={classes["overlay_container"]}>
       <div className={classes["overlay_wrapp"]}>
         <div className={classes["over_lay"]}>
-          <h1 className={classes["overlay_title"]}>Mortal Pokemon-bat</h1>
+          <h1 className={classes["overlay_title"]}>Pokemon The Game</h1>
           <h2 className={classes["overlay_start-title"]}>
             Press to start Game!
           </h2>
