@@ -32,11 +32,3 @@
   white-space: nowrap;
 }
 
-.overlay_entername {
-  color: #fff;
-  text-transform: uppercase;
-  padding-bottom: 10px;
-  font-size: 30px;
-  font-family: var(--ff-pokemon);
-  white-space: nowrap;
-}

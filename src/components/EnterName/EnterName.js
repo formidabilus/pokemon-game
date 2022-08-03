@@ -2,12 +2,7 @@ import React from "react";
 import classes from "./EnterName.module.css";
 import Button from "../../UI/Button";
 
-const EnterName = ({
-  enterName,
-  handleEnterName,
-  handleAddName,
-  inputValue,
-}) => {
+const EnterName = ({ handleEnterName, handleAddName, inputValue }) => {
   return (
     <React.Fragment>
       <div className={classes["entername_name-input"]}>
