@@ -35,6 +35,23 @@
   position: relative;
   box-shadow: 0 3px #999;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.button-catch::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 7%;
+  height: 7%;
+  outline: 1px solid rgba(128, 128, 128, 0.5);
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  background-color: var(--clr-white);
+  z-index: -1;
 }
 
 .button-catch:active {
