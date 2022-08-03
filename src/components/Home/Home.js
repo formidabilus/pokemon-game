@@ -31,6 +31,8 @@ const Home = ({ pokemonsList }) => {
   const leftPokemonImage = pokemonImage[0];
   const rightPokemonImage = pokemonImage[1];
 
+  console.log(pokemonTypes);
+
   const obj = pokemonTypes.map((type) => [
     type.name,
     type.damage_relations.double_damage_from,
@@ -40,7 +42,8 @@ const Home = ({ pokemonsList }) => {
     type.damage_relations.no_damage_from,
     type.damage_relations.no_damage_to,
   ]);
-  console.log(obj);
+  console.log("here");
+  // console.log(obj);
 
   return (
     <div className={classes["home_container"]}>
