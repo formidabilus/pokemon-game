@@ -8,7 +8,6 @@ import {
   getRandomPokemon,
 } from "../../utility/helperFunctions";
 import classes from "./Home.module.css";
-import NameDisplay from "../EnterName/NameDisplay";
 
 const Home = ({ pokemonsList }) => {
   const [pokemonImage, setPokemonImage] = useState([]);
@@ -107,7 +106,6 @@ const Home = ({ pokemonsList }) => {
     <div className={classes["home_container"]}>
       <div className={classes["home"]}>
         <div className={classes["home_card-container"]}>
-          <NameDisplay />
           <div className={classes["cards_wrapper"]}>
             <Card pokemonImage={leftPokemonImage} />
             <p className={classes["vs-text"]}>VS</p>
