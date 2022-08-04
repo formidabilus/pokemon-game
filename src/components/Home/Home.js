@@ -35,11 +35,12 @@ const Home = ({ pokemonsList }) => {
   pokemonTypes.forEach((type) => {
     typeMapping[type.name] = { ...type.damage_relations };
   });
-  console.log(typeMapping);
 
   function calculateDamageTo(pokemonTypeOne, pokemonTypeTwo) {
     let scoreDamageTo = 0;
-    for (const type in typeMapping) {
+
+    Object.keys(typeMapping).forEach((type) => {
+      console.log(type);
       if (type === pokemonTypeOne) {
         const doubleDamageTo = typeMapping[type].double_damage_to;
         doubleDamageTo.forEach((type) => {
@@ -64,13 +65,13 @@ const Home = ({ pokemonsList }) => {
           } else return;
         });
       }
-    }
+    });
     return scoreDamageTo;
   }
 
   function calculateDamageFrom(pokemonTypeOne, pokemonTypeTwo) {
     let scoreDamageFrom = 0;
-    for (const type in typeMapping) {
+    Object.keys(typeMapping).forEach((type) => {
       if (type === pokemonTypeOne) {
         const doubleDamageFrom = typeMapping[type].double_damage_from;
         doubleDamageFrom.forEach((type) => {
@@ -95,7 +96,7 @@ const Home = ({ pokemonsList }) => {
           } else return;
         });
       }
-    }
+    });
     return scoreDamageFrom;
   }
 
