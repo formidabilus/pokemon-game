@@ -15,13 +15,7 @@ export const getPokemonImage = (pokemon) => {
 
 export const getPokemonsData = async (setPokemonsList) => {
   const pokemonApiUrl = "https://pokeapi.co/api/v2/pokemon?limit=150";
-  const response = await axios.get(pokemonApiUrl).catch((error) => {
-    if (error) {
-      console.log(error.response.data);
-      console.log(error.response.status);
-      console.log(error.response.headers);
-    }
-  });
+  const response = await axios.get(pokemonApiUrl);
   const pokemonsResult = response.data.results;
 
   const individualPokemons = await Promise.all(
@@ -43,6 +37,8 @@ export const getPokemonTypes = async (setPokemonTypes) => {
   const data = await fetch("https://pokeapi.co/api/v2/type/");
   const response = await data.json();
   const result = response.results;
+  console.log(result);
+
   const types = await Promise.all(
     result.map(async (types) => {
       const typeData = await fetch(types.url);

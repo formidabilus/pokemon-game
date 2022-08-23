@@ -39,7 +39,6 @@ const Home = ({ pokemonsList }) => {
     let scoreDamageTo = 0;
 
     Object.keys(typeMapping).forEach((type) => {
-      console.log(type);
       if (type === pokemonTypeOne) {
         const doubleDamageTo = typeMapping[type].double_damage_to;
         doubleDamageTo.forEach((type) => {
